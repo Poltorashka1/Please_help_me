@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for user_info in all_user %}
+        <h1>Имя: {{ user_info.username }}</h1>
+        <p>Фамилия: {{ user_info.surname }}</p>
+        <p>Email: {{ user_info.email }}</p>
+        <p>Телефон: {{ user_info.phone }}</p>
+        {#        <p>Билеты: {% for t in user_info. %}</p>#}
+        {#            <a href="{{ t.get_absolute_url }}">{{ t.departure_city }}-{{ t.city_of_arrival }}</a>#}
+        {#        {% endfor %}#}
+        <a href="{% url 'users:delete' pk=user_info.pk %}">Удалить</a>
+    {% endfor %}
+{% endblock content %}

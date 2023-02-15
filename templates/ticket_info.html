@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for t in ticket %}
+        <h1>{{ t.departure_city }}-{{ t.city_of_arrival }}</h1>
+        <p>Время отправки: {{ t.time_of_arrival }}</p>
+        <p>Цена: {{ t.price }}</p>
+        <a href="{% url 'ticket:buy_ticket' pk=t.pk action="buy" %}">Купить</a>
+    {% endfor %}
+{% endblock content %}

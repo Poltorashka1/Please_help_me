@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p><a href="{% url 'users:admin_user' %}">Пользователи</a></p>
+    <p><a href="{% url 'users:admin_ticket' %}">Билеты</a></p>
+{% endblock content %}

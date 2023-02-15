@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for tik in all_ticket %}
+        <h1>
+            <a href="{{ tik.get_absolute_url }}">Билет {{ tik.pk }}: {{ tik.departure_city }}-{{ tik.city_of_arrival }}</a>
+        </h1>
+    {% endfor %}
+
+{% endblock content %}
